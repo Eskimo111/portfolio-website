@@ -35,10 +35,8 @@ const About = () => {
             </article>
           </div>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-            Praesentium, voluptates itaque. Placeat maiores asperiores tempore
-            error dignissimos corporis iste, rerum laudantium reiciendis vero.
-            Soluta placeat ea commodi nulla, ratione totam!
+            I designate front-end web development as my long-term professional
+            direction as it fit my curious nature
           </p>
 
           <a href="#contact" className="btn btn-primary ">
