@@ -53,21 +53,12 @@ const Contact = () => {
   const sendEmail = (e) => {
     e.preventDefault();
 
-    emailjs
-      .sendForm(
-        "service_esg9ieu",
-        "template_u7qq4jn",
-        form.current,
-        "XY1fL_j1tCBiqe2Su"
-      )
-      .then(
-        (result) => {
-          console.log(form);
-        },
-        (error) => {
-          console.log(error.text);
-        }
-      );
+    emailjs.sendForm(
+      "service_esg9ieu",
+      "template_u7qq4jn",
+      form.current,
+      "XY1fL_j1tCBiqe2Su"
+    );
 
     form.current.reset();
     setName("");
