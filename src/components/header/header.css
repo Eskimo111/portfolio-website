@@ -1,6 +1,6 @@
 header {
   min-height: 100vh;
-  padding-top: 5rem;
+  padding-top: 2rem;
   overflow: hidden;
 }
 
@@ -8,6 +8,23 @@ header {
   text-align: center;
   height: 100%;
   position: relative;
+  display: grid;
+  grid-template-columns: 45% 50%;
+}
+
+.header__right-section {
+  margin-top: auto;
+  margin-bottom: auto;
+  text-align: left;
+}
+
+.header__right-section h1 {
+  line-height: 3.5rem;
+}
+
+.header__right-section h1 b {
+  color: var(--color-primary);
+  font-size: 2.5rem;
 }
 
 /* ================== CTA ===================*/
@@ -15,7 +32,6 @@ header {
   margin-top: 2.5rem;
   display: flex;
   gap: 1.2rem;
-  justify-content: center;
 }
 
 /* ==================HEADER SOCIALS ===================*/
@@ -25,7 +41,7 @@ header {
   align-items: center;
   gap: 0.8rem;
   position: absolute;
-  left: 0;
+  right: 0;
   top: 3rem;
 }
 
@@ -33,21 +49,42 @@ header {
   content: "";
   width: 2px;
   height: 2rem;
-  background: var(--color-primary);
+  background: var(--color-dark);
 }
 
 /* ================== ME IMAGE ===================*/
 
 .me {
-  background: linear-gradient(var(--color-primary), transparent);
-  width: 22rem;
+  width: 25rem;
   height: 30rem;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 4rem;
-  border-radius: 12rem 12rem 0 0;
+  margin-top: auto;
+  margin-bottom: auto;
+  padding-top: 3rem;
   overflow: hidden;
-  padding: 5rem 1.5rem 1.5rem 1.5rem;
+}
+
+.me > img {
+  /*-webkit-mask-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBzdGFuZGFsb25lPSJubyI/Pgo8c3ZnIHZpZXdCb3g9IjAgMCAyMDAgMjAwIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgogIDxwYXRoIGZpbGw9IiNGRjAwNjYiIGQ9Ik0zMi4xLC00Ny4zQzQzLjQsLTM2LDU1LjYsLTI5LDY1LjgsLTE2LjhDNzYsLTQuNyw4NC4zLDEyLjcsNzguMywyMy43QzcyLjQsMzQuNyw1Mi4xLDM5LjMsMzYuNyw0Ny4xQzIxLjMsNTQuOSwxMC42LDY1LjksLTMuNSw3MC43Qy0xNy42LDc1LjUsLTM1LjIsNzQuMSwtNDkuMiw2NS44Qy02My4xLDU3LjUsLTczLjQsNDIuNCwtNzcuNywyNkMtODIsOS42LC04MC4zLC03LjksLTc0LjUsLTIzLjhDLTY4LjgsLTM5LjYsLTU5LC01My43LC00NS45LC02NC41Qy0zMi45LC03NS4yLC0xNi40LC04Mi42LC0zLC03OC41QzEwLjQsLTc0LjQsMjAuOCwtNTguNywzMi4xLC00Ny4zWiIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMTAwIDEwMCkiIC8+Cjwvc3ZnPgo=);
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-size: 100%;
+  height: 100%;*/
+  border-radius: 20% 80% 59% 41% / 56% 50% 50% 44%;
+  animation: blobing 3s ease-in-out infinite alternate;
+  transition: all 2s ease;
+}
+
+@keyframes blobing {
+  from {
+    border-radius: 20% 80% 59% 41% / 56% 50% 50% 44%;
+  }
+
+  to {
+    border-radius: 67% 33% 25% 75% / 22% 68% 32% 78%;
+  }
+}
+
+.me > img:hover {
+  border-radius: 0;
 }
 
 /* =============== SCROLL DOWN ==================*/

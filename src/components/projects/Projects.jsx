@@ -1,9 +1,9 @@
 import React, { Component } from "react";
-import "./portfolio.css";
+import "./projects.css";
 import Fade from "react-reveal/Fade";
 import { withRouter } from "react-router-dom";
 import { connect } from "react-redux";
-import PortfolioItem from "./PortfolioItem";
+import Project from "./Project";
 
 const mapStateToProps = (state) => {
   return {
@@ -11,20 +11,20 @@ const mapStateToProps = (state) => {
   };
 };
 
-class Portfolio extends Component {
+class Projects extends Component {
   constructor(props) {
     super(props);
   }
   render() {
     return (
-      <section id="portfolio">
+      <section id="projects">
         <h5>My recent work</h5>
-        <h2>Portfolio</h2>
-        <div className="container portfolio__container">
+        <h2>Projects</h2>
+        <div className="container projects__container">
           {this.props.projects.map((project) => {
             return (
               <Fade bottom duration={500}>
-                <PortfolioItem project={project}></PortfolioItem>
+                <Project project={project}></Project>
               </Fade>
             );
           })}
@@ -34,4 +34,4 @@ class Portfolio extends Component {
   }
 }
 
-export default withRouter(connect(mapStateToProps)(Portfolio));
+export default withRouter(connect(mapStateToProps)(Projects));

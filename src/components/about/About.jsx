@@ -42,7 +42,7 @@ const About = () => {
             <Fade left duration={500}>
               <article className="about__card" onClick={clickExperience}>
                 <FaAward className="about__icon" />
-                <h5>Experience</h5>
+                <h5>Skills</h5>
                 <small> 3+ Year Working</small>
               </article>
             </Fade>

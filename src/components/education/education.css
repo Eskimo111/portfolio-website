@@ -1,0 +1,206 @@
+.flex-parent {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.input-flex-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 80vw;
+  height: 100px;
+  max-width: 1000px;
+  position: relative;
+  z-index: 0;
+}
+
+.input {
+  width: 18px;
+  height: 18px;
+  background-color: var(--color-bg-variant);
+  position: relative;
+  border-radius: 50%;
+}
+.input:hover {
+  cursor: pointer;
+}
+
+.input.active {
+  background-color: var(--color-primary);
+}
+
+.input.active span {
+  color: var(--color-white);
+  font-weight: 700;
+}
+
+.input.active p {
+  color: var(--color-white);
+  font-weight: 700;
+}
+
+.input.active span::before {
+  font-size: 13px;
+}
+.input.active span::after {
+  font-size: 15px;
+}
+.input.active ~ .input,
+.input.active ~ .input::before,
+.input.active ~ .input::after {
+  background-color: var(--color-bg-variant);
+  color: var(--color-white);
+}
+.input span {
+  color: var(--color-bg-variant);
+  font-size: 0.75rem;
+  position: absolute;
+  width: max-content;
+  top: -1rem;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.input p {
+  color: var(--color-bg-variant);
+  font-size: 0.75rem;
+  position: absolute;
+  width: max-content;
+  top: 2rem;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+/*.input span::before,
+.input span::after {
+  visibility: visible;
+  position: absolute;
+  left: 50%;
+}*/
+
+.description-flex-container {
+  width: 80vw;
+  font-weight: 400;
+  font-size: 22px;
+  margin-top: 100px;
+  max-width: 1000px;
+}
+.description-flex-container p {
+  margin-top: 0;
+  display: none;
+}
+.description-flex-container p.active {
+  display: block;
+}
+
+.education__card {
+  width: max-content;
+  margin-top: 2rem;
+  margin-left: auto;
+  margin-right: auto;
+  background: var(--color-bg-variant);
+  padding: 2.4rem 5rem;
+  border-radius: 2rem;
+  border: 2px solid transparent;
+}
+.education__card:hover {
+  background: transparent;
+  border: 2px solid var(--color-primary-variant);
+  cursor: default;
+  transition: var(--transition);
+}
+
+.education__card h3 {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: var(--color-primary);
+}
+
+.education__details {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.education__details-icon {
+  margin-top: 0.4rem;
+  color: var(--color-primary);
+}
+
+@media (min-width: 1250px) {
+  .input::before {
+    left: -37.5px;
+  }
+
+  .input::after {
+    right: -37.5px;
+  }
+}
+@media (max-width: 850px) {
+  .input {
+    width: 17px;
+    height: 17px;
+  }
+  .input::before,
+  .input::after {
+    height: 3px;
+  }
+  .input::before {
+    left: calc(-4vw + 8.5px);
+  }
+  .input::after {
+    right: calc(-4vw + 8.5px);
+  }
+}
+@media (max-width: 600px) {
+  .flex-parent {
+    justify-content: initial;
+  }
+
+  .input-flex-container {
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    height: auto;
+    margin-top: 15vh;
+  }
+
+  .input {
+    width: 60px;
+    height: 60px;
+    margin: 0 10px 50px;
+    background-color: var(--color-bg-variant);
+  }
+  .input::before,
+  .input::after {
+    content: none;
+  }
+  .input span {
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
+  .input span::before {
+    top: calc(100% + 5px);
+    transform: translateX(-50%);
+    text-indent: 0;
+    text-align: center;
+  }
+  .input span::after {
+    top: 50%;
+    transform: translate(-50%, -50%);
+    color: #ecf0f1;
+  }
+
+  .description-flex-container {
+    margin-top: 30px;
+    text-align: center;
+  }
+}
+@media (max-width: 400px) {
+  body {
+    min-height: 950px;
+  }
+}
